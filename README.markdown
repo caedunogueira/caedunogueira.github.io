@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/caedunogueira/caedunogueira.github.io.svg?branch=main)](https://travis-ci.org/caedunogueira/caedunogueira.github.io)
