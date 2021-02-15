@@ -43,3 +43,5 @@ A partir desse ponto, é possível tanto retirar as mudanças selecionadas e dev
 Nesta etapa será registrado no histórico as mudanças adicionadas na Staging Area. Ao utilizar o comando `git commit` um snapshot de todo o repositório é realizado, conforme comentado [aqui]({{ site.url }}{{ site.baseurl }}/controle-versao/como-git-controla-versao-parte-2/index.html). Um snapshot também é comumente denominado de _commit_. Com o comando `git log` é possível visualizar todos os commits realizados, o que corresponde a visualização do histórico deste repositório.
 
 Um commit também pode ser revertido, isto é, pode-se retornar a uma determinada versão dos arquivos baseado em outro commit do histórico.
+
+Referência: [Git - Book](https://git-scm.com/book/en/v2)
