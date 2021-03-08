@@ -50,7 +50,7 @@ O CVCS apresenta algumas desvantagens também, tais como:
 {: style="text-align: justify;"}
 
 - Único ponto de falha: como todas as operações relacionadas ao histórico dependem do servidor (checkout, visualizar histórico, commit, e etc), caso esteja ausente ou há algum problema na comunicação com ele, você ficará impossibilitado de realizar tais operações. Se, por exemplo, precisar disponibilizar suas mudanças para outras pessoas neste cenário, isso não será possível até que tal problema seja resolvido;
-- Banco de dados do sistema corrompido: nesse cenário será necessário restaurar um backup. Pode haver impactos para o histórico em relação a desafasagem do último backup com o que tinha no banco ou mesmo se o backup também possuir problemas. O que as pessoas possuem localmente é apenas uma versão daquilo disponível no servidor, não sendo suficiente para ajudar a contornar este problema.
+- Banco de dados do sistema corrompido: nesse cenário será necessário restaurar um backup. Pode haver impactos para o histórico em relação a defasagem do último backup com o que tinha no banco ou mesmo se o backup também possuir problemas. O que as pessoas possuem localmente é apenas uma versão daquilo disponível no servidor, não sendo suficiente para ajudar a contornar este problema.
 {: style="text-align: justify;"}
 
 Referência: [Git - Book](https://git-scm.com/book/en/v2)

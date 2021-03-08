@@ -34,6 +34,7 @@ Quando tais mudanças são adicionadas, elas são registradas em um arquivo dent
 {: style="text-align:justify;"}
 
 Se várias mudanças foram realizadas na Working Tree mas deseja-se que elas sejam discriminadas no histórico (qual conterá informações do autor, mensagem do hash/estado/versão, data e hora e etc) então pode ser adicionado as desejadas, seguir para o próximo estágio, e depois retornar novamente para Staging Area para adicionar novas mudanças. Como comentado, é possível fazer isso de uma vez ou aos poucos, conforme a necessidade.
+{: style="text-align:justify;"}
 
 A partir desse ponto, é possível tanto retirar as mudanças selecionadas e devolvê-las para a Working Tree quanto avançar para o último estágio.
 {: style="text-align:justify;"}
@@ -41,7 +42,9 @@ A partir desse ponto, é possível tanto retirar as mudanças selecionadas e dev
 ## Committed
 
 Nesta etapa será registrado no histórico as mudanças adicionadas na Staging Area. Ao utilizar o comando `git commit` um snapshot de todo o repositório é realizado, conforme comentado [aqui]({{ site.url }}{{ site.baseurl }}/controle-versao/como-git-controla-versao-parte-2/index.html). Um snapshot também é comumente denominado de _commit_. Com o comando `git log` é possível visualizar todos os commits realizados, o que corresponde a visualização do histórico deste repositório.
+{: style="text-align:justify;"}
 
 Um commit também pode ser revertido, isto é, pode-se retornar a uma determinada versão dos arquivos baseado em outro commit do histórico.
+{: style="text-align:justify;"}
 
 Referência: [Git - Book](https://git-scm.com/book/en/v2)

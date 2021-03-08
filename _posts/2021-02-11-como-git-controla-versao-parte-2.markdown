@@ -11,7 +11,7 @@ Em continuidade ao que foi comentado na primeira parte, para contornar as desvan
 
 ## Controle de versão descentralizado
 
-Diferente do CVCS, um DVCS (_Distributed Version Control System_ em inglês) disponibilizará não somente uma versão do histórico que se encontra no servidor/repositório central mas sim todo o seu histórico. Neste sistema o histórico é *distribuído* para todos que desejam colaborar com as mudanças nos arquivos, não mais fica centralizado em um único ponto.
+Diferente do CVCS, um DVCS (_Distributed Version Control System_ em inglês) disponibilizará não somente uma versão do histórico que se encontra no servidor/repositório central mas sim **todo** o seu histórico. Neste sistema o histórico é *distribuído* para todos que desejam colaborar com as mudanças nos arquivos, não mais fica centralizado em um único ponto.
 {: style="text-align:justify;"}
 
 Dessa forma, a maior parte das operações para lidar com esse histórico não necessitam comunicar-se com o servidor, são executadas localmente, já que há uma cópia do repositório na máquina. Isso torna tais operações rápidas de serem executadas já que não há mais dependência de comunicação de rede e possíveis problemas de latência.
