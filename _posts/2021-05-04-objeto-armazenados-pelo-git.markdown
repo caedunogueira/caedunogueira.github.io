@@ -50,7 +50,7 @@ Caso outro arquivo seja criado com o mesmo conteúdo, o Git não criará mais um
 ## Objeto Tree
 
 O diretório raiz e todo subdiretório será armazenado no Git como objeto **tree**. No momento em que é executado um commit, o Git realizará um snapshot do diretório para obter a lista de arquivos e diretórios correspondentes. O checksum de um objeto tree é baseado nos respectivos nomes dos itens dessa lista. Essa informação passa a ser utilizada no nome do objeto.
-{: style="text-align:justify"}
+{: style="text-align:justify;"}
 
 Será vinculado para cada item da lista a referência do seu respectivo checksum, isto é, qual é o seu respectivo conteúdo no momento que o commit foi realizado. Abaixo consta um exemplo do que podemos encontrar ao visualizar o conteúdo de um objeto tree. Nele consta dois arquivos e um subdiretório, este último qual possui também um arquivo:
 {: style="text-align:justify;"}

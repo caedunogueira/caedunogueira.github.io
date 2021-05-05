@@ -34,6 +34,6 @@ Cada versão corresponde a um estado desse repositório, e toda vez que há um e
 {: style="text-align:justify;"}
 
  _Obs: claro, há mais informações que podem ser visualizadas com o comando `git log`_
-{: style="text-align:justify"}
+{: style="text-align:justify;"}
 
 Referência: [Git - Book](https://git-scm.com/book/en/v2)
