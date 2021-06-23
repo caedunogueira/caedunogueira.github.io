@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Branchs no Git
-date: 2021-05-06 08:10:00 -0300
+date: 2021-05-06 08:11:00 -0300
 categories: controle-versao
 tags: git branch
 ---
