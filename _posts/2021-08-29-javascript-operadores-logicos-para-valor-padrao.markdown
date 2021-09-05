@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Operadores lógicos em Javascript para definir valor padrão
+title: "Javascript: operadores lógicos para definir valor padrão"
 date: 2021-08-29 14:50:00 -0300
 categories: programacao
 tags: javascript AND OR padrão default
