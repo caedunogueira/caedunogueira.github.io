@@ -79,7 +79,7 @@ og_image                 : # Open Graph/Twitter default site image
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
   type                   : # Person or Organization (defaults to Person)
-  name                   : "Carlos Nogueira"
+  name                   : "Carlos Eduardo Nogueira"
   links: # An array of links to social media profiles
     - "https://twitter.com/caedunogueira"
     - "https://www.linkedin.com/in/cadu-nogueira"
