@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Javascript: representação de caracter"
+title: "Javascript: representação de caracteres"
 date: 2021-10-21 08:20:00
 categories: programacao
 tags: javascript unicode utf-16
