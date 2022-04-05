@@ -3,7 +3,7 @@ layout: single
 title: "Javascript: representação de caracter"
 date: 2021-10-21 08:20:00
 categories: programacao
-tags: javascript unicode utf-16 string
+tags: javascript unicode utf-16
 ---
 
 Toda informação a ser interpretada pela máquina é processada na forma de bits (0 e 1). Com string não é diferente. Para cada caracter em uma string, há um conjunto de bits e consequentemente podemos ter um código decimal correspondente a esse conjunto.
