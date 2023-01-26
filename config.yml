@@ -1,0 +1,132 @@
+baseURL: "https://caedunogueira.github.io/"
+defaultContentLanguage: pt-br
+title: Carlos Nogueira
+theme: "PaperMod"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+languages:
+  pt-br:
+    params:
+      description: "Seja bem-vindo(a) ao meu blog"
+      keywords: [blog, desenvolvimento, software]
+
+      homeInfoParams:
+        Title: Olá!
+        Content: Seja bem-vindo(a) ao meu blog.
+
+      socialIcons:
+        - name: "twitter"
+          url: "https://twitter.com/caedunogueira"
+        - name: "github"
+          url: "https://github.com/caedunogueira"
+        - name: "linkedin"
+          url: "https://www.linkedin.com/in/cadu-nogueira"
+
+    menu:
+        main:
+        - identifier: archive-portuguese
+          name: Arquivo
+          url: /arquivos/
+          weight: 10
+        - identifier: search-portuguese
+          name: Pesquisa
+          url: /pesquisa/
+          weight: 20
+        - identifier: tags-portuguese
+          name: Tags
+          url: /tags/
+          weight: 30
+
+    contentDir: content/portuguese
+    languageCode: pt-br
+    languageName: Português
+    weight: 1
+  en:
+    params:
+      description: "Welcome to my blog"
+      keywords: [blog, development, software]
+
+      homeInfoParams:
+        Title: Hello!
+        Content: Welcome to my blog.
+
+      socialIcons:
+        - name: "twitter"
+          url: "https://twitter.com/caedunogueira"
+        - name: "github"
+          url: "https://github.com/caedunogueira"
+        - name: "linkedin"
+          url: "https://www.linkedin.com/in/cadu-nogueira/?locale=en_US"
+
+    menu:
+      main:
+      - identifier: archive-english
+        name: Archive
+        url: /en/archives/
+        weight: 10
+      - identifier: search-english
+        name: Search
+        url: /en/search/
+        weight: 20
+      - identifier: tags-english
+        name: Tags
+        url: /en/tags/
+        weight: 30
+
+    contentDir: content/english
+    languageCode: en
+    languageName: English
+    weight: 2
+
+params:
+  env: production
+  title: Carlos Nogueira
+  author: Carlos Nogueira
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowShareButtons: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: true
+  disqusShortname: carloseduardonogueira
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+  assets:
+    favicon: "/images/icons/favicon-512.png"
+    favicon16x16: "/images/icons/favicon-16.png"
+    favicon32x32: "/images/icons/favicon-32.png"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
