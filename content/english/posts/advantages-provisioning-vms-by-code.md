@@ -1,6 +1,7 @@
 ---
 title: "Advantages provisioning virtual machines by code"
 date: 2023-04-03T06:45:06-03:00
+tags: [azure]
 ---
 
 Some of the advantages using code to provisioning virtual machines are:

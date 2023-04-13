@@ -1,6 +1,7 @@
 ---
 title: "Componentes de uma Máquina Virtual do Azure"
 date: 2023-03-28T06:38:54-03:00
+tags: [azure]
 slug: "components-maquina-virtual-azure"
 ---
 

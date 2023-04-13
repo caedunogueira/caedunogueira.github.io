@@ -1,6 +1,7 @@
 ---
 title: "Azure Virtual Machine components"
 date: 2023-03-28T06:38:54-03:00
+tags: [azure]
 ---
 
 In a high level what Azure virtual machine is composed of, the one's components are:

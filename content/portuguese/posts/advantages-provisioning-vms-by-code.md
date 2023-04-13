@@ -1,6 +1,7 @@
 ---
 title: "Vantagens em provisionar máquinas virtual por código"
 date: 2023-04-03T06:45:06-03:00
+tags: [azure]
 slug: "vantagens-provisionar-vms-por-codigo"
 ---
 

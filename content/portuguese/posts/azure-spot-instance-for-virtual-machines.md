@@ -1,6 +1,7 @@
 ---
 title: "Instância Azure Spot"
 date: 2023-03-29T07:02:32-03:00
+tags: [azure]
 slug: "instancia-azure-spot-para-maquinas-virtuais"
 ---
 

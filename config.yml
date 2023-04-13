@@ -125,6 +125,9 @@ params:
     favicon16x16: "/images/icons/favicon-16.png"
     favicon32x32: "/images/icons/favicon-32.png"
 
+taxonomies:
+  tag: tags
+  
 outputs:
   home:
     - HTML

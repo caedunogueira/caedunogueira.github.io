@@ -1,6 +1,7 @@
 ---
 title: "Authentication using Azure CLI"
 date: 2023-04-03T07:01:45-03:00
+tags: [azure]
 ---
 
 There are two ways in order to authenticate in Azure using Azure CLI:
