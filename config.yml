@@ -105,7 +105,7 @@ params:
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: true
-  disqusShortname: carloseduardonogueira
+  DisqusShortname: carloseduardonogueira
   hidemeta: false
   hideSummary: false
   showtoc: false
