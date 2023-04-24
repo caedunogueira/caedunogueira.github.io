@@ -2,6 +2,7 @@ baseURL: "https://caedunogueira.github.io/"
 defaultContentLanguage: pt-br
 title: Carlos Nogueira
 theme: "PaperMod"
+DisqusShortname: carloseduardonogueira
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -105,7 +106,6 @@ params:
   disableSpecial1stPost: false
   disableScrollToTop: false
   comments: true
-  DisqusShortname: carloseduardonogueira
   hidemeta: false
   hideSummary: false
   showtoc: false
