@@ -17,7 +17,7 @@ It belongs to top of resources hierarchy, in which identify and prove you are wh
 ## Azure Role-Based Control (Azure RBAC)
 
 It provides fine-grained access management to Azure resources.
-Roles is a collection of specific permissions. Individual permissions, for instance, such creating virtual machines, viewing virtual machines and other similar examples like that. A bundle of specific permissions is assigned to a role.
+Roles is a collection of individual permissions. Individual permissions, for instance, such creating virtual machines, viewing virtual machines and other similar examples like that. A bundle of specific permissions is assigned to a role.
 The role is assigned to security principal.
 
 ## Scopes
