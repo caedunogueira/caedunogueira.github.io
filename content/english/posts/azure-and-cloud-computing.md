@@ -1,5 +1,5 @@
 ---
-title: "Cloud Computing and Azure"
+title: "Azure and Cloud Computing"
 date: 2023-07-18T18:57:23
 tags: [azure]
 ---

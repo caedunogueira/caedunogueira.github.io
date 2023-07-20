@@ -1,8 +1,8 @@
 ---
-title: "Computação em Nuvem e Azure"
+title: "Azure e Computação em Nuvem"
 date: 2023-07-18T18:57:23
 tags: [azure]
-slug: "computacao-em-nuvem-e-azure"
+slug: "azure-e-computacao-em-nuvem"
 ---
 
 Computação em Nuvem significa usar recursos de computação de outra pessoa e em outro lugar em data centers remotos em todo o mundo. Existem algumas características em torno deste tema, como:
