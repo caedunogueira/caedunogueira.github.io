@@ -13,7 +13,7 @@ systemctl list-units
 Targets represent the state of Linux has reached during startup. It is also possible to run the above command to filter only for target units:
 
 ```shell
-systemctl list-units type=target
+systemctl list-units --type=target
 ```
 
 To get the default target boot has been used for Linux, the following command fit the purpose:

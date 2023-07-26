@@ -14,7 +14,7 @@ systemctl list-units
 _Targets_ representam o estado que o Linux alcançou durante a inicialização. Também é possível executar o comando acima para filtrar apenas as _units_ do tipo _target_:
 
 ```shell
-systemctl list-units type=target
+systemctl list-units --type=target
 ```
 
 Para obter o _target_ padrão sendo utilizado para o Linux, o seguinte comando se encaixa nesse propósito:
