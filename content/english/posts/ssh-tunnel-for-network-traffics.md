@@ -7,5 +7,5 @@ tags: [linux]
 SSH tunnel is Port forwarding via SSH in which you will able to pass traffic that it can use an unencrypted protocol over an encrypted network stream. The command is:
 
 ```shell
-ssh -f <remote address> -L <local port>:<remote address>:<remote port>
+ssh -f <remote address> -L <local port>:<remote address>:<remote port> -N
 ```
