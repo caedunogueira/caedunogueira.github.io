@@ -1,5 +1,5 @@
 ---
-title: "Conceitos Básicos Contêineres"
+title: "Conceitos Básicos de Contêiner"
 date: 2023-10-08T12:08:41-03:00
 tags: [container]
 slug: "conceitos-basicos-conteineres"
