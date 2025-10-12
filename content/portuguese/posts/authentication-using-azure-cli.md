@@ -26,4 +26,4 @@ az login --service-principal
 
 É ideal para cenários usados por ferramentas de automação. Você irá criar uma entidade de serviço (se ainda não existe) ou pelo comando `az ad sp create` ou pelo comando `az ad sp create-for-rbac`, dando por último as permissões apropriadas para os recursos na Azure.
 Ao invés de conceder acesso completo para essas ferramentas é recomendavél utilizar a entidade de serviço com permissões restritivas.
-O parâmetro `--service-principal` deve ser fornecido com outros para autenticar dessa forma.
+O parâmetro `--service-principal` deve ser fornecido com outros para autenticação.

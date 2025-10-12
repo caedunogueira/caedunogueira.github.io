@@ -25,4 +25,4 @@ az login --service-principal
 
 It is ideal for scenarios used by automated tools. You will need to create one (if it does not exist yet) by either `az ad sp create` command or `az ad sp create-for-rbac` command, last giving the according permissions for the Azure resources.
 Instead of granting full access to those tools it is recommended use service principal with restrictive permissions.
-The parameter `--service-principal` must be provided with others to authenticate in that mode.
+The parameter `--service-principal` must be provided with others to authentication.
