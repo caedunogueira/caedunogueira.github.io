@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Container on Carlos Nogueira</title>
+    <link>http://localhost:1313/en/tags/container/</link>
+    <description>Recent content in Container on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 08 Oct 2023 12:08:41 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Container Basic Concepts</title>
+      <link>http://localhost:1313/en/posts/container-basic-concepts/</link>
+      <pubDate>Sun, 08 Oct 2023 12:08:41 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/container-basic-concepts/</guid>
+      <description>&lt;h2 id=&#34;virtual-machines-and-containers&#34;&gt;Virtual Machines and Containers&lt;/h2&gt;
+&lt;p&gt;One approach to deploying software as a portable solution is to use virtual machines. The virtual machines are able to emulate the proper operating system needed for that application, running on top of the host operating system in that bare metal. However, it considers a high usage of the host resources that leverage the costs. Another point to bring to the discussion as another example is about scaling the applications. It’s neither simple nor fast to provide another application instance due to the time to boot a new virtual machine, that is, the time to spin up another replica of that operating system along with the required components there. On the one hand, you can provision a virtual machine running an operating system, regardless of the host operating system. On the other hand, costs and scalability are tough to deal with.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

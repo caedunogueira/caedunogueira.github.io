@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Azure on Carlos Nogueira</title>
+    <link>http://localhost:1313/en/tags/azure/</link>
+    <description>Recent content in Azure on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Jul 2023 18:49:21 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure IAM Components</title>
+      <link>http://localhost:1313/en/posts/azure-iam-components/</link>
+      <pubDate>Thu, 20 Jul 2023 18:49:21 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-iam-components/</guid>
+      <description>&lt;p&gt;There are 3 components used for Azure Identity Authorization Management:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Active Directory&lt;/li&gt;
+&lt;li&gt;Azure Role-Based Control&lt;/li&gt;
+&lt;li&gt;Scopes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;azure-active-directory&#34;&gt;Azure Active Directory&lt;/h2&gt;
+&lt;p&gt;It belongs to top of resources hierarchy, in which identify and prove you are who you are saying you are. Once the identity has been resolved, the role and permissions can set to that identity. Each identity in Azure in known as security principal because identity can represents users, applications and so on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Resources Hierarchy</title>
+      <link>http://localhost:1313/en/posts/azure-resources-hierarchy/</link>
+      <pubDate>Thu, 20 Jul 2023 12:19:55 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-resources-hierarchy/</guid>
+      <description>&lt;p&gt;There is a resources organization in Azure applied at 5 levels, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tenant
+&lt;ul&gt;
+&lt;li&gt;Management Group
+&lt;ul&gt;
+&lt;li&gt;Subscriptions
+&lt;ul&gt;
+&lt;li&gt;Resource Group
+&lt;ul&gt;
+&lt;li&gt;Resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One of the advantages of that organization is a centralize manner to set up permissions. Permissions applied in one level will be replicated to the lower levels. For example, access policy established for a set of identities and roles to a specific subscription means all resources belong to it will conform with those policies. For maintenance of that policy, modify in one place will replicate changes to all resources available in that subscription.
+The centralized authorization can be applied for all levels.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure and Cloud Computing</title>
+      <link>http://localhost:1313/en/posts/azure-and-cloud-computing/</link>
+      <pubDate>Tue, 18 Jul 2023 18:57:23 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-and-cloud-computing/</guid>
+      <description>&lt;p&gt;Cloud Computing means use compute resources from someone else and somewhere else in remote data centers around the world. There are some characteristics around this subject, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fault Tolerance&lt;/strong&gt;: The approach for replicate the solution more than one place in order to reduce downtime to consume those services when you face with any crash. It is like &amp;ldquo;backup&amp;rdquo;, applied for applications, data and so on and sor forth.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;High Availability&lt;/strong&gt;: The purpose to take closer users that services they will consume for. Regard to device location, it has available to consume the same services in a nearer region instead of origin one with the goal to reduce the time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication using Azure CLI</title>
+      <link>http://localhost:1313/en/posts/authentication-using-azure-cli/</link>
+      <pubDate>Mon, 03 Apr 2023 07:01:45 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/authentication-using-azure-cli/</guid>
+      <description>&lt;p&gt;There are two ways in order to authenticate in Azure using Azure CLI:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interactive mode&lt;/li&gt;
+&lt;li&gt;Service Principal mode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;interactive-mode&#34;&gt;Interactive mode&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It allows you authenticate in Azure launching the Azure&amp;rsquo;s authentication page in a browser to manually provide the username and password.&lt;/p&gt;
+&lt;h2 id=&#34;service-principal-mode&#34;&gt;Service Principal mode&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login --service-principal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It is ideal for scenarios used by automated tools. You will need to create one (if it does not exist yet) by either &lt;code&gt;az ad sp create&lt;/code&gt; command or &lt;code&gt;az ad sp create-for-rbac&lt;/code&gt; command, last giving the according permissions for the Azure resources.
+Instead of granting full access to those tools it is recommended use service principal with restrictive permissions.
+The parameter &lt;code&gt;--service-principal&lt;/code&gt; must be provided with others to authentication.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Advantages provisioning virtual machines by code</title>
+      <link>http://localhost:1313/en/posts/advantages-provisioning-vms-by-code/</link>
+      <pubDate>Mon, 03 Apr 2023 06:45:06 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/advantages-provisioning-vms-by-code/</guid>
+      <description>&lt;p&gt;Some of the advantages using code to provisioning virtual machines are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;consistency&lt;/em&gt;: you are able to create virtual machines with the same characteristics regardless the amount required to that deploy. Besides that, you can follow the changes for this resource using system version control.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;automation&lt;/em&gt;: due to the steps are the same to deploy that resource, they are candidates to automate them, helping to repeat themselves every time as needed. It avoids make some mistakes whereas could appear when apply those steps manually.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Spot instance</title>
+      <link>http://localhost:1313/en/posts/azure-spot-instance-for-virtual-machines/</link>
+      <pubDate>Wed, 29 Mar 2023 07:02:32 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-spot-instance-for-virtual-machines/</guid>
+      <description>&lt;p&gt;Azure Spot instance is a setting that allows Azure to stop and deallocate the virtual machine in order to provide compute capacity to Azure for whatever reason.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Virtual Machine components</title>
+      <link>http://localhost:1313/en/posts/azure-virtual-machine-components/</link>
+      <pubDate>Tue, 28 Mar 2023 06:38:54 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-virtual-machine-components/</guid>
+      <description>&lt;p&gt;In a high level what Azure virtual machine is composed of, the one&amp;rsquo;s components are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resource Group&lt;/strong&gt;: a virtual machine is deployed into a Resource Group, that latter contains an Azure region. Deploying a virtual machine for that Resource Group means to choose in deliver a phisically virtual machine in that location in order to take closer users and/or applications will use the services hosted in it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Size&lt;/strong&gt;: when building a virtual machine, it is necessary pick one size from a pre-configured list based on a number of CPU cores, amount of RAM and also disk performance capabilities. The choice depends on the workload scenario you have to that virtual machine. You are able to upgrade or downgrade the size has been deployed in it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -2,22 +2,300 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Carlos Nogueira</title>
-    <link>https://caedunogueira.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Carlos Nogueira</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Fri, 10 Feb 2023 10:58:54 -0300</lastBuildDate><atom:link href="https://caedunogueira.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Feb 2024 10:30:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Como criar Máquinas Virtuais do Azure</title>
-      <link>https://caedunogueira.github.io/posts/como-criar-maquinas-virtuais-do-azure/</link>
-      <pubDate>Fri, 10 Feb 2023 10:58:54 -0300</pubDate>
-      
-      <guid>https://caedunogueira.github.io/posts/como-criar-maquinas-virtuais-do-azure/</guid>
-      <description>No Azure, o primeiro passo no processo para criar uma máquina virtual irá requerer uma assinatura disponível. Além disso, junto aos demais passos posteriores, você determinará as características para os componentes da máquina virtual que estão sempre presentes. Tais componentes são descritos abaixo:
-Resource Group Uma Máquina Virtual é disponibilizada para um Resource Group, no qual contém uma região do Azure atrelada a ele. Isso significa que você terá uma máquina física naquele local com propósito de aproximar consumo dos usuários para as aplicações e serviços hospedados naquela máquina.</description>
+      <title>Kubernetes - Parte 1</title>
+      <link>http://localhost:1313/posts/kubernetes-parte-1/</link>
+      <pubDate>Sun, 11 Feb 2024 10:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes-parte-1/</guid>
+      <description>&lt;p&gt;O Kubernetes é um orquestrador de contêineres criado para ser executado usando uma arquitetura de contêineres, ou seja, um cluster que contém um nó mestre (o nó &lt;em&gt;control plane&lt;/em&gt;) e nós escravos (os nós de trabalho). Um nó &lt;em&gt;control plane&lt;/em&gt; é responsável apenas por gerenciar os nós de trabalho e garantir sua integridade para executar suas cargas de trabalho. O nó &lt;em&gt;control plane&lt;/em&gt; não terá nenhuma carga de trabalho em execução para se tornar um nó mais robusto e eficiente, o que aumenta as chances de evitar que um problema ocorra nele devido a um problema de carga de trabalho.
+O nó &lt;em&gt;control plane&lt;/em&gt; exporá sua API, o que permite gerenciar e interagir com o cluster.&lt;/p&gt;</description>
     </item>
-    
-    
-    
+    <item>
+      <title>Conceitos Básicos de Contêiner</title>
+      <link>http://localhost:1313/posts/conceitos-basicos-conteineres/</link>
+      <pubDate>Sun, 08 Oct 2023 12:08:41 -0300</pubDate>
+      <guid>http://localhost:1313/posts/conceitos-basicos-conteineres/</guid>
+      <description>&lt;h2 id=&#34;máquinas-virtuais-e-contêineres&#34;&gt;Máquinas Virtuais e Contêineres&lt;/h2&gt;
+&lt;p&gt;Uma abordagem para a implantação de software como uma solução portátil é usar máquinas virtuais. As máquinas virtuais são capazes de emular o sistema operacional adequado necessário para esse aplicativo, sendo executadas sobre o sistema operacional do host nesse bare metal. No entanto, isso considera um alto uso dos recursos do host que alavancam os custos. Outro ponto a ser trazido para a discussão como outro exemplo é o dimensionamento dos aplicativos. Não é simples nem rápido fornecer outra instância de aplicativo devido ao tempo de inicialização de uma nova máquina virtual, ou seja, o tempo para rodar outra réplica desse sistema operacional junto com os componentes necessários. Por um lado, é possível provisionar uma máquina virtual que executa um sistema operacional, independentemente do sistema operacional do host. Por outro lado, é difícil lidar com os custos e a escalabilidade.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conexões com TCP Wrappers e Sockets do Systemd</title>
+      <link>http://localhost:1313/posts/conexoes-com-tcp-wrappers-e-sockets-do-systemd/</link>
+      <pubDate>Wed, 02 Aug 2023 07:30:13 +0000</pubDate>
+      <guid>http://localhost:1313/posts/conexoes-com-tcp-wrappers-e-sockets-do-systemd/</guid>
+      <description>&lt;p&gt;Você pode criar uma camada extra para conexões usando Sockets do Systemd com TCP Wrappers. Em primeiro lugar, precisamos verificar se o &lt;code&gt;sshd.socket&lt;/code&gt; está parado:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Caso contrário, podemos usar o comando abaixo para atingir esse objetivo.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl stop sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A próxima etapa pode ser criar um &lt;em&gt;job&lt;/em&gt; para interromper &lt;code&gt;sshd.service&lt;/code&gt; e iniciar &lt;code&gt;sshd.socket&lt;/code&gt;. Os seguintes comandos auxiliam nesta tarefa:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo at now + &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; minutes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl stop sshd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl start sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O comando &lt;code&gt;Ctrl + D&lt;/code&gt; permitirá finalizar a edição e agendar o &lt;em&gt;job&lt;/em&gt; para o horário proposto. Depois que o socket do Systemd foi iniciado, você pode verificar a presença da biblioteca TCP Wrapper:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tunel SSH para Tráfego de Rede</title>
+      <link>http://localhost:1313/posts/tunel-ssh-para-trafego-de-rede/</link>
+      <pubDate>Wed, 02 Aug 2023 07:15:26 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tunel-ssh-para-trafego-de-rede/</guid>
+      <description>&lt;p&gt;O túnel SSH é o encaminhamento de porta via SSH no qual você poderá passar o tráfego que pode usar um protocolo não criptografado em um fluxo de rede criptografado. O comando é:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -f &amp;lt;remote address&amp;gt; -L &amp;lt;local port&amp;gt;:&amp;lt;remote address&amp;gt;:&amp;lt;remote port&amp;gt; -N
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Journal Control para investigar logs de serviço</title>
+      <link>http://localhost:1313/posts/journal-control-para-investigar-logs-de-servico/</link>
+      <pubDate>Wed, 26 Jul 2023 18:50:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/journal-control-para-investigar-logs-de-servico/</guid>
+      <description>&lt;p&gt;Quando você se depara com um problema em um dos serviços e deseja investigar sobre sua execução através de logs, pode utilizar o &lt;strong&gt;Journal Control&lt;/strong&gt; para esta tarefa conforme mencionado no comando abaixo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u &amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O serviço é um exemplo, mas a opção -u pode ser usada para qualquer arquivo &lt;em&gt;unit&lt;/em&gt;, seja do sistema ou definido pelo usuário.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Criar Unit de Timer do Systemd</title>
+      <link>http://localhost:1313/posts/criar-unit-de-timer-do-systemd/</link>
+      <pubDate>Wed, 26 Jul 2023 18:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/criar-unit-de-timer-do-systemd/</guid>
+      <description>&lt;p&gt;Com propósito de agendar uma execução para um serviço específico em um determinado período de tempo, um arquivo &lt;em&gt;timer&lt;/em&gt; pode ajudar a atingir esse objetivo. &lt;em&gt;Timers&lt;/em&gt; são arquivos &lt;em&gt;unit&lt;/em&gt; do systemd, cujo nome é seguido pelo sufixo &lt;strong&gt;.timer&lt;/strong&gt;, e tem essa característica. Olhando para o conteúdo do arquivo conforme demonstrado no exemplo a seguir, podemos notar a presença da seção &lt;strong&gt;Timer&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Description&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Timer&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OnCalendar&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;*-*-* 10:30:00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Persistent&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Install&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WantedBy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;target&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A seção &lt;strong&gt;Timer&lt;/strong&gt; utiliza a opção &lt;strong&gt;OnCalendar&lt;/strong&gt; para estabelecer quando o serviço deve ser executado (no exemplo acima, sempre às 10h30) apontando seu respectivo serviço na opção &lt;strong&gt;Unit&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Verificar e alterar inicialização de destino padrão para Linux</title>
+      <link>http://localhost:1313/posts/verificar-e-alterar-inicializacao-de-destino-padrao/</link>
+      <pubDate>Wed, 26 Jul 2023 11:41:14 +0000</pubDate>
+      <guid>http://localhost:1313/posts/verificar-e-alterar-inicializacao-de-destino-padrao/</guid>
+      <description>&lt;p&gt;O Systemd é responsável por gerenciar recursos de sistema do Linux. Esses recursos são conhecidos como &lt;em&gt;units&lt;/em&gt;, como serviços, &lt;em&gt;targets&lt;/em&gt;, &lt;em&gt;sockets&lt;/em&gt; e assim por diante. É possível usar o &lt;strong&gt;systemd&lt;/strong&gt; para listar todas as &lt;em&gt;units&lt;/em&gt; com o seguinte comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Targets&lt;/em&gt; representam o estado que o Linux alcançou durante a inicialização. Também é possível executar o comando acima para filtrar apenas as &lt;em&gt;units&lt;/em&gt; do tipo &lt;em&gt;target&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units --type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para obter o &lt;em&gt;target&lt;/em&gt; padrão sendo utilizado para o Linux, o seguinte comando se encaixa nesse propósito:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos de Gestão de Usuário no Linux</title>
+      <link>http://localhost:1313/posts/comandos-gestao-usuario-linux/</link>
+      <pubDate>Mon, 24 Jul 2023 18:46:38 +0000</pubDate>
+      <guid>http://localhost:1313/posts/comandos-gestao-usuario-linux/</guid>
+      <description>&lt;p&gt;Na tabela abaixo existem alguns comandos que podem ser utilizados para lidar com usuários e grupos:&lt;/p&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Objetivo&lt;/th&gt;
+					&lt;th&gt;Comando&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;adicionar usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;adduser &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;adicionar grupo de usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;addgroup &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;adicionar grupo de usuário como grupo primário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -g &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;anexar grupo de usuário como grupo suplementar&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -aG &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;travar usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -L &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;checar os grupos do usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;id &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;mudar para usuário root&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo -i&lt;/code&gt; or &lt;code&gt;sudo su -&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;mudar para outro usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo su - &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;configurar senha&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;passwd &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Para conceder permissões para um usuário/grupo específico para executar comandos com o &lt;em&gt;sudo&lt;/em&gt;, isso pode ser apontado em um arquivo &lt;em&gt;sudoer&lt;/em&gt; separado (dentro do diretório &lt;em&gt;sudoers.d&lt;/em&gt;). Há um exemplo abaixo para aplicar configurações para &lt;em&gt;myuser&lt;/em&gt; permitindo ele executar os comandos &lt;em&gt;restart&lt;/em&gt; e &lt;em&gt;reload&lt;/em&gt; do serviço http:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Components do IAM no Azure</title>
+      <link>http://localhost:1313/posts/components-do-iam-no-azure/</link>
+      <pubDate>Thu, 20 Jul 2023 18:49:21 +0000</pubDate>
+      <guid>http://localhost:1313/posts/components-do-iam-no-azure/</guid>
+      <description>&lt;p&gt;Existem 3 componentes usados para a Gestão de Autorização de Identidades do Azure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Azure Active Directory&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Azure Role-Based Control&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Scopes&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;azure-active-directory&#34;&gt;Azure Active Directory&lt;/h2&gt;
+&lt;p&gt;Pertence ao topo da hierarquia de recursos, na qual identifica e comprova que você é quem diz ser. Depois que a identidade for resolvida, o papel e as permissões podem ser definidas para essa identidade. Cada identidade no Azure é conhecida como &lt;em&gt;security principal&lt;/em&gt; porque a identidade pode representar usuários, aplicativos e assim por diante.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hierarquia de Recursos no Azure</title>
+      <link>http://localhost:1313/posts/hierarquia-de-recursos-no-azure/</link>
+      <pubDate>Thu, 20 Jul 2023 12:19:55 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hierarquia-de-recursos-no-azure/</guid>
+      <description>&lt;p&gt;Existe uma organização de recursos no Azure aplicada em 5 níveis, tais como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Tenant&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Management Group&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Assinaturas
+&lt;ul&gt;
+&lt;li&gt;Grupo de Recursos
+&lt;ul&gt;
+&lt;li&gt;Recursos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Uma das vantagens dessa organização é uma maneira centralizada de configurar permissões. As permissões aplicadas em um nível serão replicadas para os níveis inferiores. Por exemplo, a política de acesso estabelecida para um conjunto de identidades e papéis para uma assinatura específica significa que todos os recursos pertencentes a ela estarão em conformidade com essas políticas. Para manter essa política, modificar em um local replicará as alterações em todos os recursos disponíveis nessa assinatura.
+A autorização centralizada pode ser aplicada para todos os níveis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure e Computação em Nuvem</title>
+      <link>http://localhost:1313/posts/azure-e-computacao-em-nuvem/</link>
+      <pubDate>Tue, 18 Jul 2023 18:57:23 +0000</pubDate>
+      <guid>http://localhost:1313/posts/azure-e-computacao-em-nuvem/</guid>
+      <description>&lt;p&gt;Computação em Nuvem significa usar recursos de computação de outra pessoa e em outro lugar em data centers remotos em todo o mundo. Existem algumas características em torno deste tema, como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tolerância a falhas&lt;/strong&gt;: A abordagem para replicar a solução em mais de um local, a fim de reduzir o tempo de inatividade para consumir esses serviços quando você enfrentar qualquer falha. É como &amp;ldquo;backup&amp;rdquo;, aplicado para aplicativos, dados e assim por diante.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenID Connect</title>
+      <link>http://localhost:1313/posts/openid-connect/</link>
+      <pubDate>Thu, 27 Apr 2023 07:23:50 -0300</pubDate>
+      <guid>http://localhost:1313/posts/openid-connect/</guid>
+      <description>&lt;p&gt;O OpenID Connect é uma camada extra sobre o OAuth, então podemos dizer que ele tem os mesmos fluxos que o OAuth tem com mais alguns escopos para estendê-lo.&lt;/p&gt;
+&lt;p&gt;Então, quando falamos do token de acesso, o protocolo diz que ele não deve ser usado pelo cliente para ler e obter acesso às suas informações. Os clientes só precisam encaminhá-lo. Por outro lado, os clientes podem precisar obter informações do usuário, portanto, o OpenID Connect fornece o token de identidade no qual apenas os clientes o usarão.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Refresh Token</title>
+      <link>http://localhost:1313/posts/refresh-token-oauth/</link>
+      <pubDate>Thu, 27 Apr 2023 07:02:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/refresh-token-oauth/</guid>
+      <description>&lt;p&gt;O &lt;em&gt;refresh token&lt;/em&gt; é um token de referência, portanto, você pode revogá-lo se alguém o roubar. Como token de referência, o protocolo o define como de longa duração. Se você removê-lo do armazenamento do Servidor de Autorização, o invasor não poderá obter um novo token de acesso novamente. O Servidor de Autorização pode fornecer uma lista de aplicativos aprovados pelo usuário (e que podem ser revogados).&lt;/p&gt;
+&lt;p&gt;O caso de uso usual é a sessão de duração (renovar o token de acesso obtendo um novo sem fornecer as credenciais novamente).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Respostas do OAuth</title>
+      <link>http://localhost:1313/posts/respostas-oauth/</link>
+      <pubDate>Wed, 26 Apr 2023 07:24:26 -0300</pubDate>
+      <guid>http://localhost:1313/posts/respostas-oauth/</guid>
+      <description>&lt;p&gt;Quando há um problema de autorização, existem 2 códigos de status de resposta HTTP usados para informar o cliente um pouco mais sobre o problema:&lt;/p&gt;
+&lt;h2 id=&#34;401---não-autorizado&#34;&gt;401 - Não Autorizado&lt;/h2&gt;
+&lt;p&gt;O Servidor de Recursos pode responder para um dos 2 cenários:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Não sabemos quem você é&lt;/li&gt;
+&lt;li&gt;Não aceitaremos mais seu token porque ele expirou&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;403---proibido&#34;&gt;403 - Proibido&lt;/h2&gt;
+&lt;p&gt;O Servidor de Recursos responde para o cenário:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sabemos perfeitamente que você é mas, você não tem permissão para acessar este recurso&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Fluxos do OAuth 2.1</title>
+      <link>http://localhost:1313/posts/fluxos-oauth-2-1/</link>
+      <pubDate>Wed, 26 Apr 2023 06:47:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/fluxos-oauth-2-1/</guid>
+      <description>&lt;p&gt;Para o OAuth 2.1, a quantidade de fluxos recomendados diminuiu (de 5 para 2), sendo eles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Credenciais do Cliente&lt;/li&gt;
+&lt;li&gt;Código de Autorização com PKCE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;credenciais-do-cliente&#34;&gt;Credenciais do Cliente&lt;/h2&gt;
+&lt;p&gt;Esse fluxo representa a comunicação máquina a máquina, na qual você não tem um usuário &amp;ldquo;interativo&amp;rdquo; presente ou, pelo menos, não se importa com isso. Isso significa que as informações do usuário não são necessárias para obter acesso aos recursos, apenas as informações do cliente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Motivação para o OAuth</title>
+      <link>http://localhost:1313/posts/motivacoes-oauth/</link>
+      <pubDate>Sun, 23 Apr 2023 13:35:47 -0300</pubDate>
+      <guid>http://localhost:1313/posts/motivacoes-oauth/</guid>
+      <description>&lt;p&gt;No ano de 2005 surgiu o primeiro protocolo utilizando tecnologias web para fornecer autenticação e autorização com provedor de identidade: SAML 2.0.&lt;/p&gt;
+&lt;p&gt;Antes era possível fazer isso em aplicações web com tecnologias NTLM ou Kerberos colocando-as dentro do navegador para ter acesso aos recursos usando o Active Directory, por exemplo, como forma de ter single sign-on nessas aplicações.&lt;/p&gt;
+&lt;p&gt;No entanto, a ideia com o SAML 2.0 era sobre como poderíamos provar que o usuário é o usuário fazendo requisições pelo navegador? Para as tecnologias dessa época, estamos falando sobre o uso de SOAP (XML) e seus padrões de assinatura (assinatura XML).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Autenticação usando  Azure CLI</title>
+      <link>http://localhost:1313/posts/autenticacao-usando-azure-cli/</link>
+      <pubDate>Mon, 03 Apr 2023 07:01:45 -0300</pubDate>
+      <guid>http://localhost:1313/posts/autenticacao-usando-azure-cli/</guid>
+      <description>&lt;p&gt;Há duas formas com propósito de se autenticar na Azure usando Azure CLI:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Modo Interativo&lt;/li&gt;
+&lt;li&gt;Modo Entidade de Serviço&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;modo-interativo&#34;&gt;Modo Interativo&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Permite você autenticar na Azure abrindo uma página de autenticação do portal no browser para manualmente fornecer o usuário e senha.&lt;/p&gt;
+&lt;h2 id=&#34;modo-entidade-de-serviço&#34;&gt;Modo Entidade de Serviço&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login --service-principal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;É ideal para cenários usados por ferramentas de automação. Você irá criar uma entidade de serviço (se ainda não existe) ou pelo comando &lt;code&gt;az ad sp create&lt;/code&gt; ou pelo comando &lt;code&gt;az ad sp create-for-rbac&lt;/code&gt;, dando por último as permissões apropriadas para os recursos na Azure.
+Ao invés de conceder acesso completo para essas ferramentas é recomendavél utilizar a entidade de serviço com permissões restritivas.
+O parâmetro &lt;code&gt;--service-principal&lt;/code&gt; deve ser fornecido com outros para autenticação.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vantagens em provisionar máquinas virtual por código</title>
+      <link>http://localhost:1313/posts/vantagens-provisionar-vms-por-codigo/</link>
+      <pubDate>Mon, 03 Apr 2023 06:45:06 -0300</pubDate>
+      <guid>http://localhost:1313/posts/vantagens-provisionar-vms-por-codigo/</guid>
+      <description>&lt;p&gt;Algumas das vantagens em usar código para provisionar máquinas virtuais são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;consistência&lt;/em&gt;: você é capaz de criar máquinas virtuais com as mesmas características independente da quantidade requerida para aquela implantação. Além disso, você pode acompanhar as mudanças para este recurso usando um sistema de controle de versão.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;automação&lt;/em&gt;: devido as etapas serem as mesmas para implantar esse recurso, elas são candidatas para automatizá-las, ajudando a repeti-las sempre que necessário. Isso evita cometer alguns erros que podem aparecer ao aplicar essas etapas manualmente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instância Azure Spot</title>
+      <link>http://localhost:1313/posts/instancia-azure-spot-para-maquinas-virtuais/</link>
+      <pubDate>Wed, 29 Mar 2023 07:02:32 -0300</pubDate>
+      <guid>http://localhost:1313/posts/instancia-azure-spot-para-maquinas-virtuais/</guid>
+      <description>&lt;p&gt;Instância Azure Spot é uma configuração que permite Azure parar e desalocar a máquina virtual com propósito de fornecer capacidade computacional para Azure por qualquer motivo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Componentes de uma Máquina Virtual do Azure</title>
+      <link>http://localhost:1313/posts/components-maquina-virtual-azure/</link>
+      <pubDate>Tue, 28 Mar 2023 06:38:54 -0300</pubDate>
+      <guid>http://localhost:1313/posts/components-maquina-virtual-azure/</guid>
+      <description>&lt;p&gt;Em um alto nível sobre a composição de uma máquina virtual do Azure, seus componentes são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resource Group&lt;/strong&gt;: uma máquina virtual é implantada baseado em um Resource Group, esse último qual contém uma região do Azure. Implantar uma máquina virtual para aquele Resource Group significa escolher disponibilizar uma máquina virtual fisicamente naquele local com o propósito de trazer mais próximo usuários e/ou aplicações daquela região que irão utilizar os serviços hospedados nela.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

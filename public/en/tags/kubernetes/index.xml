@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kubernetes on Carlos Nogueira</title>
+    <link>http://localhost:1313/en/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Feb 2024 10:30:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes - Part 1</title>
+      <link>http://localhost:1313/en/posts/kubernetes-part-1/</link>
+      <pubDate>Sun, 11 Feb 2024 10:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/kubernetes-part-1/</guid>
+      <description>&lt;p&gt;Kubernetes is a container orchestrator thought to run using a container architecture, that is, a cluster containing a master node (the control plane node) and slave nodes (the working nodes). A control plane node is only responsible for managing the working nodes and ensuring their health to run their workloads. The control plane node won&amp;rsquo;t have any workload running on it due to getting more robust and efficient, increasing the chances of avoiding a problem occurring on it due to a workload problem.
+The control plane node will expose its API, which enable to manage and interact with the cluster.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

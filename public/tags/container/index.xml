@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Container on Carlos Nogueira</title>
+    <link>http://localhost:1313/tags/container/</link>
+    <description>Recent content in Container on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 08 Oct 2023 12:08:41 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/container/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conceitos Básicos de Contêiner</title>
+      <link>http://localhost:1313/posts/conceitos-basicos-conteineres/</link>
+      <pubDate>Sun, 08 Oct 2023 12:08:41 -0300</pubDate>
+      <guid>http://localhost:1313/posts/conceitos-basicos-conteineres/</guid>
+      <description>&lt;h2 id=&#34;máquinas-virtuais-e-contêineres&#34;&gt;Máquinas Virtuais e Contêineres&lt;/h2&gt;
+&lt;p&gt;Uma abordagem para a implantação de software como uma solução portátil é usar máquinas virtuais. As máquinas virtuais são capazes de emular o sistema operacional adequado necessário para esse aplicativo, sendo executadas sobre o sistema operacional do host nesse bare metal. No entanto, isso considera um alto uso dos recursos do host que alavancam os custos. Outro ponto a ser trazido para a discussão como outro exemplo é o dimensionamento dos aplicativos. Não é simples nem rápido fornecer outra instância de aplicativo devido ao tempo de inicialização de uma nova máquina virtual, ou seja, o tempo para rodar outra réplica desse sistema operacional junto com os componentes necessários. Por um lado, é possível provisionar uma máquina virtual que executa um sistema operacional, independentemente do sistema operacional do host. Por outro lado, é difícil lidar com os custos e a escalabilidade.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -2,23 +2,307 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Carlos Nogueira</title>
-    <link>https://caedunogueira.github.io/en/</link>
+    <link>http://localhost:1313/en/</link>
     <description>Recent content on Carlos Nogueira</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Mar 2023 06:38:54 -0300</lastBuildDate><atom:link href="https://caedunogueira.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Feb 2024 10:30:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes - Part 1</title>
+      <link>http://localhost:1313/en/posts/kubernetes-part-1/</link>
+      <pubDate>Sun, 11 Feb 2024 10:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/kubernetes-part-1/</guid>
+      <description>&lt;p&gt;Kubernetes is a container orchestrator thought to run using a container architecture, that is, a cluster containing a master node (the control plane node) and slave nodes (the working nodes). A control plane node is only responsible for managing the working nodes and ensuring their health to run their workloads. The control plane node won&amp;rsquo;t have any workload running on it due to getting more robust and efficient, increasing the chances of avoiding a problem occurring on it due to a workload problem.
+The control plane node will expose its API, which enable to manage and interact with the cluster.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Container Basic Concepts</title>
+      <link>http://localhost:1313/en/posts/container-basic-concepts/</link>
+      <pubDate>Sun, 08 Oct 2023 12:08:41 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/container-basic-concepts/</guid>
+      <description>&lt;h2 id=&#34;virtual-machines-and-containers&#34;&gt;Virtual Machines and Containers&lt;/h2&gt;
+&lt;p&gt;One approach to deploying software as a portable solution is to use virtual machines. The virtual machines are able to emulate the proper operating system needed for that application, running on top of the host operating system in that bare metal. However, it considers a high usage of the host resources that leverage the costs. Another point to bring to the discussion as another example is about scaling the applications. It’s neither simple nor fast to provide another application instance due to the time to boot a new virtual machine, that is, the time to spin up another replica of that operating system along with the required components there. On the one hand, you can provision a virtual machine running an operating system, regardless of the host operating system. On the other hand, costs and scalability are tough to deal with.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Connections with TCP Wrappers and Systemd Sockets</title>
+      <link>http://localhost:1313/en/posts/connections-with-tcp-wrappers-and-systemd-sockets/</link>
+      <pubDate>Wed, 02 Aug 2023 07:30:13 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/connections-with-tcp-wrappers-and-systemd-sockets/</guid>
+      <description>&lt;p&gt;You can create an extra layer for connections using Systemd Sockets with TCP Wrappers. Firstly, we need check the &lt;code&gt;sshd.socket&lt;/code&gt; is stopped:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Otherwise, we can use the below command to achieve this goal.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl stop sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The next step could be create a job to stop &lt;code&gt;sshd.service&lt;/code&gt; and start &lt;code&gt;sshd.socket&lt;/code&gt;. The following commands help in this task:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo at now + &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; minutes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl stop sshd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl start sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The command &lt;code&gt;Ctrl + D&lt;/code&gt; will allow finish the edition and schedule the job for the proposal time. Afterwards the Systemd Socket has been started, you can check the presence of TCP Wrapper library:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SSH Tunnel for Network Traffics</title>
+      <link>http://localhost:1313/en/posts/ssh-tunnel-for-network-traffics/</link>
+      <pubDate>Wed, 02 Aug 2023 07:15:26 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/ssh-tunnel-for-network-traffics/</guid>
+      <description>&lt;p&gt;SSH tunnel is Port forwarding via SSH in which you will able to pass traffic that it can use an unencrypted protocol over an encrypted network stream. The command is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -f &amp;lt;remote address&amp;gt; -L &amp;lt;local port&amp;gt;:&amp;lt;remote address&amp;gt;:&amp;lt;remote port&amp;gt; -N
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Journal Control to investigate service logs</title>
+      <link>http://localhost:1313/en/posts/journal-control-to-investigate-service-logs/</link>
+      <pubDate>Wed, 26 Jul 2023 18:50:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/journal-control-to-investigate-service-logs/</guid>
+      <description>&lt;p&gt;When you face with a problem in one of the service and would like to investigate about its execution through logs, you can use the &lt;strong&gt;Journal Control&lt;/strong&gt; to this task as mentioned in the below command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u &amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Service is an example but the option -u can be used to any unit file, either system or user-defined one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Create a Systemd Timer Unit</title>
+      <link>http://localhost:1313/en/posts/create-systemd-timer-unit/</link>
+      <pubDate>Wed, 26 Jul 2023 18:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/create-systemd-timer-unit/</guid>
+      <description>&lt;p&gt;In order to schedule an execution for a specific service given a period of time, a timer file can helps achieve this goal. Timers are systemd unit files, in which its name is followed by the suffix &lt;strong&gt;.timer&lt;/strong&gt;, and it has that characteristic. Look into to its file content as demonstrated in the following example, we can notice the presence of section &lt;strong&gt;Timer&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Description&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Timer&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OnCalendar&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;*-*-* 10:30:00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Persistent&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Install&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WantedBy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;target&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;strong&gt;Timer&lt;/strong&gt; section uses the option &lt;strong&gt;OnCalendar&lt;/strong&gt; to establish when the service should be executed (in the above example, always at 10:30) pointing out to its service in the option &lt;strong&gt;Unit&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Check and change the default target boot for Linux</title>
+      <link>http://localhost:1313/en/posts/check-and-change-default-target-boot/</link>
+      <pubDate>Wed, 26 Jul 2023 11:41:14 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/check-and-change-default-target-boot/</guid>
+      <description>&lt;p&gt;Systemd is responsible to manage Linux system resources. Those resources are known as units, such as services, targets, sockets and so on. It is possible to use systemd to list all of units are made of by the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Targets represent the state of Linux has reached during startup. It is also possible to run the above command to filter only for target units:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units --type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To get the default target boot has been used for Linux, the following command fit the purpose:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux User Management Commands</title>
+      <link>http://localhost:1313/en/posts/linux-users-management-commands/</link>
+      <pubDate>Mon, 24 Jul 2023 18:46:38 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/linux-users-management-commands/</guid>
+      <description>&lt;p&gt;In the below table there are some commands can be used to handle users and groups:&lt;/p&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Goal&lt;/th&gt;
+					&lt;th&gt;Command&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;add user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;adduser &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;add user group&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;addgroup &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;add specific user group as primary group&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -g &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;append user group as suplementary group&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -aG &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;lock user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -L &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;check the user groups&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;id &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;change to root user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo -i&lt;/code&gt; or &lt;code&gt;sudo su -&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;change to another user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo su - &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;set password&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;passwd &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;To give permissions for specific user/group in order to execute commands with &lt;em&gt;sudo&lt;/em&gt;, it can be pointed out in a separeted &lt;em&gt;sudoer&lt;/em&gt; file (within &lt;em&gt;sudoers.d&lt;/em&gt; directory). There is a below example to apply settings for &lt;em&gt;myuser&lt;/em&gt; enabling it to execute &lt;em&gt;restart&lt;/em&gt; and &lt;em&gt;reload&lt;/em&gt; commands from http service:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure IAM Components</title>
+      <link>http://localhost:1313/en/posts/azure-iam-components/</link>
+      <pubDate>Thu, 20 Jul 2023 18:49:21 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-iam-components/</guid>
+      <description>&lt;p&gt;There are 3 components used for Azure Identity Authorization Management:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Active Directory&lt;/li&gt;
+&lt;li&gt;Azure Role-Based Control&lt;/li&gt;
+&lt;li&gt;Scopes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;azure-active-directory&#34;&gt;Azure Active Directory&lt;/h2&gt;
+&lt;p&gt;It belongs to top of resources hierarchy, in which identify and prove you are who you are saying you are. Once the identity has been resolved, the role and permissions can set to that identity. Each identity in Azure in known as security principal because identity can represents users, applications and so on.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Resources Hierarchy</title>
+      <link>http://localhost:1313/en/posts/azure-resources-hierarchy/</link>
+      <pubDate>Thu, 20 Jul 2023 12:19:55 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-resources-hierarchy/</guid>
+      <description>&lt;p&gt;There is a resources organization in Azure applied at 5 levels, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tenant
+&lt;ul&gt;
+&lt;li&gt;Management Group
+&lt;ul&gt;
+&lt;li&gt;Subscriptions
+&lt;ul&gt;
+&lt;li&gt;Resource Group
+&lt;ul&gt;
+&lt;li&gt;Resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One of the advantages of that organization is a centralize manner to set up permissions. Permissions applied in one level will be replicated to the lower levels. For example, access policy established for a set of identities and roles to a specific subscription means all resources belong to it will conform with those policies. For maintenance of that policy, modify in one place will replicate changes to all resources available in that subscription.
+The centralized authorization can be applied for all levels.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure and Cloud Computing</title>
+      <link>http://localhost:1313/en/posts/azure-and-cloud-computing/</link>
+      <pubDate>Tue, 18 Jul 2023 18:57:23 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-and-cloud-computing/</guid>
+      <description>&lt;p&gt;Cloud Computing means use compute resources from someone else and somewhere else in remote data centers around the world. There are some characteristics around this subject, such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fault Tolerance&lt;/strong&gt;: The approach for replicate the solution more than one place in order to reduce downtime to consume those services when you face with any crash. It is like &amp;ldquo;backup&amp;rdquo;, applied for applications, data and so on and sor forth.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;High Availability&lt;/strong&gt;: The purpose to take closer users that services they will consume for. Regard to device location, it has available to consume the same services in a nearer region instead of origin one with the goal to reduce the time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenID Connect</title>
+      <link>http://localhost:1313/en/posts/openid-connect/</link>
+      <pubDate>Thu, 27 Apr 2023 07:23:50 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/openid-connect/</guid>
+      <description>&lt;p&gt;OpenID Connect is an extra layer on top of OAuth, so we can say it has the same flows that OAuth has with few more scopes to extend it.&lt;/p&gt;
+&lt;p&gt;So, when we talk about the access token, the protocol says it must not used by the client to read and get access for its information. Clients only need to forward it. On the other hand, clients maybe need to get user information, therefore, OpenID Connect provides the identity token in which only the clients will use it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Refresh Token</title>
+      <link>http://localhost:1313/en/posts/oauth-refresh-token/</link>
+      <pubDate>Thu, 27 Apr 2023 07:02:00 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-refresh-token/</guid>
+      <description>&lt;p&gt;Refresh token is a reference token so, you can revogate it if someone stole from you. As a reference token the protocol define it to a long-lived. If you remove it from Authorization Server storage the attacker won’t be able to get a new access token again. The Authorization Server can provide a list of apps approved by the user (and that can be revogate).&lt;/p&gt;
+&lt;p&gt;The usually use case is the duration session (renew the access token getting a new one without provide the credentials again).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OAuth Responses</title>
+      <link>http://localhost:1313/en/posts/oauth-responses/</link>
+      <pubDate>Wed, 26 Apr 2023 07:24:26 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-responses/</guid>
+      <description>&lt;p&gt;When there is a problem with authorization, there are 2 HTTP response status code used to let the client know a little bit more about the problem:&lt;/p&gt;
+&lt;h2 id=&#34;401---unauthorized&#34;&gt;401 - Unauthorized&lt;/h2&gt;
+&lt;p&gt;The Resource Server can answers for one of the 2 scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We don&amp;rsquo;t know who you are&lt;/li&gt;
+&lt;li&gt;We won&amp;rsquo;t accept anymore your token because it is expired&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;403---forbidden&#34;&gt;403 - Forbidden&lt;/h2&gt;
+&lt;p&gt;The Resource Server answers for the scenario:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We know perfectly you are but you are not allowed to get access for this resource&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>OAuth 2.1 Flows</title>
+      <link>http://localhost:1313/en/posts/oauth-2-1-flows/</link>
+      <pubDate>Wed, 26 Apr 2023 06:47:00 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-2-1-flows/</guid>
+      <description>&lt;p&gt;For the OAuth 2.1, the amount of recommended flows decreased (from 5 to 2), in which they are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Client Credentials&lt;/li&gt;
+&lt;li&gt;Authorization Code with PKCE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;client-credentials&#34;&gt;Client Credentials&lt;/h2&gt;
+&lt;p&gt;That flow represents the machine to machine communication, in which you don&amp;rsquo;t have &amp;ldquo;interactive&amp;rdquo; user present or, at least, you don&amp;rsquo;t care about it. It means that the user information is not necessary to get resources access, only the client information.&lt;/p&gt;
+&lt;p&gt;The client sends a POST request to the &lt;em&gt;token&lt;/em&gt; endpoint in Authorization Server. For successful request, the cliente receives an access token in the response so that, it is able to consume the resources available in Resource Server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Motivations to OAuth</title>
+      <link>http://localhost:1313/en/posts/oauth-motivations/</link>
+      <pubDate>Sun, 23 Apr 2023 13:35:47 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-motivations/</guid>
+      <description>&lt;p&gt;In the year of 2005 came up the first protocol using web technologies to provide authentication and authorization with identity provider: SAML 2.0.&lt;/p&gt;
+&lt;p&gt;Before that, it was feasible to do that in web applications with NTLM or Kerberos technologies putting those inside the browser to get access to resources using Active Directory, for example, as a way to have single sign-on on those applications.&lt;/p&gt;
+&lt;p&gt;However, the idea with SAML 2.0 was in how could we proof the user is the user by doing requests to the browser? For those technologies in that age we are talking about use of SOAP (XML) and its signature standards (XML signature).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication using Azure CLI</title>
+      <link>http://localhost:1313/en/posts/authentication-using-azure-cli/</link>
+      <pubDate>Mon, 03 Apr 2023 07:01:45 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/authentication-using-azure-cli/</guid>
+      <description>&lt;p&gt;There are two ways in order to authenticate in Azure using Azure CLI:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interactive mode&lt;/li&gt;
+&lt;li&gt;Service Principal mode&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;interactive-mode&#34;&gt;Interactive mode&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It allows you authenticate in Azure launching the Azure&amp;rsquo;s authentication page in a browser to manually provide the username and password.&lt;/p&gt;
+&lt;h2 id=&#34;service-principal-mode&#34;&gt;Service Principal mode&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login --service-principal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It is ideal for scenarios used by automated tools. You will need to create one (if it does not exist yet) by either &lt;code&gt;az ad sp create&lt;/code&gt; command or &lt;code&gt;az ad sp create-for-rbac&lt;/code&gt; command, last giving the according permissions for the Azure resources.
+Instead of granting full access to those tools it is recommended use service principal with restrictive permissions.
+The parameter &lt;code&gt;--service-principal&lt;/code&gt; must be provided with others to authentication.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Advantages provisioning virtual machines by code</title>
+      <link>http://localhost:1313/en/posts/advantages-provisioning-vms-by-code/</link>
+      <pubDate>Mon, 03 Apr 2023 06:45:06 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/advantages-provisioning-vms-by-code/</guid>
+      <description>&lt;p&gt;Some of the advantages using code to provisioning virtual machines are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;consistency&lt;/em&gt;: you are able to create virtual machines with the same characteristics regardless the amount required to that deploy. Besides that, you can follow the changes for this resource using system version control.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;automation&lt;/em&gt;: due to the steps are the same to deploy that resource, they are candidates to automate them, helping to repeat themselves every time as needed. It avoids make some mistakes whereas could appear when apply those steps manually.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Spot instance</title>
+      <link>http://localhost:1313/en/posts/azure-spot-instance-for-virtual-machines/</link>
+      <pubDate>Wed, 29 Mar 2023 07:02:32 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/azure-spot-instance-for-virtual-machines/</guid>
+      <description>&lt;p&gt;Azure Spot instance is a setting that allows Azure to stop and deallocate the virtual machine in order to provide compute capacity to Azure for whatever reason.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Azure Virtual Machine components</title>
-      <link>https://caedunogueira.github.io/en/posts/how-create-azure-virtual-machines/</link>
+      <link>http://localhost:1313/en/posts/azure-virtual-machine-components/</link>
       <pubDate>Tue, 28 Mar 2023 06:38:54 -0300</pubDate>
-      
-      <guid>https://caedunogueira.github.io/en/posts/how-create-azure-virtual-machines/</guid>
-      <description>In a high level what Azure virtual machine is composed of, the one&amp;rsquo;s components are:
-Resource Group: a virtual machine is deployed into a Resource Group, that latter contains an Azure region. Deploying a virtual machine for that Resource Group means to choose in deliver a phisically virtual machine in that location in order to take closer users and/or applications will use the services hosted in it.
-Size: when building a virtual machine, it is necessary pick one size from a pre-configured list based on a number of CPU cores, amount of RAM and also disk performance capabilities.</description>
+      <guid>http://localhost:1313/en/posts/azure-virtual-machine-components/</guid>
+      <description>&lt;p&gt;In a high level what Azure virtual machine is composed of, the one&amp;rsquo;s components are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resource Group&lt;/strong&gt;: a virtual machine is deployed into a Resource Group, that latter contains an Azure region. Deploying a virtual machine for that Resource Group means to choose in deliver a phisically virtual machine in that location in order to take closer users and/or applications will use the services hosted in it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Size&lt;/strong&gt;: when building a virtual machine, it is necessary pick one size from a pre-configured list based on a number of CPU cores, amount of RAM and also disk performance capabilities. The choice depends on the workload scenario you have to that virtual machine. You are able to upgrade or downgrade the size has been deployed in it.&lt;/p&gt;</description>
     </item>
-    
-    
-    
   </channel>
 </rss>

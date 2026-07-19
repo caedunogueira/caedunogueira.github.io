@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Azure on Carlos Nogueira</title>
+    <link>http://localhost:1313/tags/azure/</link>
+    <description>Recent content in Azure on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Thu, 20 Jul 2023 18:49:21 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Components do IAM no Azure</title>
+      <link>http://localhost:1313/posts/components-do-iam-no-azure/</link>
+      <pubDate>Thu, 20 Jul 2023 18:49:21 +0000</pubDate>
+      <guid>http://localhost:1313/posts/components-do-iam-no-azure/</guid>
+      <description>&lt;p&gt;Existem 3 componentes usados para a Gestão de Autorização de Identidades do Azure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Azure Active Directory&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Azure Role-Based Control&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Scopes&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;azure-active-directory&#34;&gt;Azure Active Directory&lt;/h2&gt;
+&lt;p&gt;Pertence ao topo da hierarquia de recursos, na qual identifica e comprova que você é quem diz ser. Depois que a identidade for resolvida, o papel e as permissões podem ser definidas para essa identidade. Cada identidade no Azure é conhecida como &lt;em&gt;security principal&lt;/em&gt; porque a identidade pode representar usuários, aplicativos e assim por diante.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hierarquia de Recursos no Azure</title>
+      <link>http://localhost:1313/posts/hierarquia-de-recursos-no-azure/</link>
+      <pubDate>Thu, 20 Jul 2023 12:19:55 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hierarquia-de-recursos-no-azure/</guid>
+      <description>&lt;p&gt;Existe uma organização de recursos no Azure aplicada em 5 níveis, tais como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Tenant&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Management Group&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Assinaturas
+&lt;ul&gt;
+&lt;li&gt;Grupo de Recursos
+&lt;ul&gt;
+&lt;li&gt;Recursos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Uma das vantagens dessa organização é uma maneira centralizada de configurar permissões. As permissões aplicadas em um nível serão replicadas para os níveis inferiores. Por exemplo, a política de acesso estabelecida para um conjunto de identidades e papéis para uma assinatura específica significa que todos os recursos pertencentes a ela estarão em conformidade com essas políticas. Para manter essa política, modificar em um local replicará as alterações em todos os recursos disponíveis nessa assinatura.
+A autorização centralizada pode ser aplicada para todos os níveis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure e Computação em Nuvem</title>
+      <link>http://localhost:1313/posts/azure-e-computacao-em-nuvem/</link>
+      <pubDate>Tue, 18 Jul 2023 18:57:23 +0000</pubDate>
+      <guid>http://localhost:1313/posts/azure-e-computacao-em-nuvem/</guid>
+      <description>&lt;p&gt;Computação em Nuvem significa usar recursos de computação de outra pessoa e em outro lugar em data centers remotos em todo o mundo. Existem algumas características em torno deste tema, como:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tolerância a falhas&lt;/strong&gt;: A abordagem para replicar a solução em mais de um local, a fim de reduzir o tempo de inatividade para consumir esses serviços quando você enfrentar qualquer falha. É como &amp;ldquo;backup&amp;rdquo;, aplicado para aplicativos, dados e assim por diante.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Autenticação usando  Azure CLI</title>
+      <link>http://localhost:1313/posts/autenticacao-usando-azure-cli/</link>
+      <pubDate>Mon, 03 Apr 2023 07:01:45 -0300</pubDate>
+      <guid>http://localhost:1313/posts/autenticacao-usando-azure-cli/</guid>
+      <description>&lt;p&gt;Há duas formas com propósito de se autenticar na Azure usando Azure CLI:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Modo Interativo&lt;/li&gt;
+&lt;li&gt;Modo Entidade de Serviço&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;modo-interativo&#34;&gt;Modo Interativo&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Permite você autenticar na Azure abrindo uma página de autenticação do portal no browser para manualmente fornecer o usuário e senha.&lt;/p&gt;
+&lt;h2 id=&#34;modo-entidade-de-serviço&#34;&gt;Modo Entidade de Serviço&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;az login --service-principal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;É ideal para cenários usados por ferramentas de automação. Você irá criar uma entidade de serviço (se ainda não existe) ou pelo comando &lt;code&gt;az ad sp create&lt;/code&gt; ou pelo comando &lt;code&gt;az ad sp create-for-rbac&lt;/code&gt;, dando por último as permissões apropriadas para os recursos na Azure.
+Ao invés de conceder acesso completo para essas ferramentas é recomendavél utilizar a entidade de serviço com permissões restritivas.
+O parâmetro &lt;code&gt;--service-principal&lt;/code&gt; deve ser fornecido com outros para autenticação.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vantagens em provisionar máquinas virtual por código</title>
+      <link>http://localhost:1313/posts/vantagens-provisionar-vms-por-codigo/</link>
+      <pubDate>Mon, 03 Apr 2023 06:45:06 -0300</pubDate>
+      <guid>http://localhost:1313/posts/vantagens-provisionar-vms-por-codigo/</guid>
+      <description>&lt;p&gt;Algumas das vantagens em usar código para provisionar máquinas virtuais são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;consistência&lt;/em&gt;: você é capaz de criar máquinas virtuais com as mesmas características independente da quantidade requerida para aquela implantação. Além disso, você pode acompanhar as mudanças para este recurso usando um sistema de controle de versão.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;automação&lt;/em&gt;: devido as etapas serem as mesmas para implantar esse recurso, elas são candidatas para automatizá-las, ajudando a repeti-las sempre que necessário. Isso evita cometer alguns erros que podem aparecer ao aplicar essas etapas manualmente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instância Azure Spot</title>
+      <link>http://localhost:1313/posts/instancia-azure-spot-para-maquinas-virtuais/</link>
+      <pubDate>Wed, 29 Mar 2023 07:02:32 -0300</pubDate>
+      <guid>http://localhost:1313/posts/instancia-azure-spot-para-maquinas-virtuais/</guid>
+      <description>&lt;p&gt;Instância Azure Spot é uma configuração que permite Azure parar e desalocar a máquina virtual com propósito de fornecer capacidade computacional para Azure por qualquer motivo.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Componentes de uma Máquina Virtual do Azure</title>
+      <link>http://localhost:1313/posts/components-maquina-virtual-azure/</link>
+      <pubDate>Tue, 28 Mar 2023 06:38:54 -0300</pubDate>
+      <guid>http://localhost:1313/posts/components-maquina-virtual-azure/</guid>
+      <description>&lt;p&gt;Em um alto nível sobre a composição de uma máquina virtual do Azure, seus componentes são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resource Group&lt;/strong&gt;: uma máquina virtual é implantada baseado em um Resource Group, esse último qual contém uma região do Azure. Implantar uma máquina virtual para aquele Resource Group significa escolher disponibilizar uma máquina virtual fisicamente naquele local com o propósito de trazer mais próximo usuários e/ou aplicações daquela região que irão utilizar os serviços hospedados nela.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

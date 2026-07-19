@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Carlos Nogueira</title>
+    <link>http://localhost:1313/en/tags/linux/</link>
+    <description>Recent content in Linux on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Aug 2023 07:30:13 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connections with TCP Wrappers and Systemd Sockets</title>
+      <link>http://localhost:1313/en/posts/connections-with-tcp-wrappers-and-systemd-sockets/</link>
+      <pubDate>Wed, 02 Aug 2023 07:30:13 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/connections-with-tcp-wrappers-and-systemd-sockets/</guid>
+      <description>&lt;p&gt;You can create an extra layer for connections using Systemd Sockets with TCP Wrappers. Firstly, we need check the &lt;code&gt;sshd.socket&lt;/code&gt; is stopped:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Otherwise, we can use the below command to achieve this goal.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl stop sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The next step could be create a job to stop &lt;code&gt;sshd.service&lt;/code&gt; and start &lt;code&gt;sshd.socket&lt;/code&gt;. The following commands help in this task:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo at now + &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; minutes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl stop sshd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl start sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The command &lt;code&gt;Ctrl + D&lt;/code&gt; will allow finish the edition and schedule the job for the proposal time. Afterwards the Systemd Socket has been started, you can check the presence of TCP Wrapper library:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SSH Tunnel for Network Traffics</title>
+      <link>http://localhost:1313/en/posts/ssh-tunnel-for-network-traffics/</link>
+      <pubDate>Wed, 02 Aug 2023 07:15:26 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/ssh-tunnel-for-network-traffics/</guid>
+      <description>&lt;p&gt;SSH tunnel is Port forwarding via SSH in which you will able to pass traffic that it can use an unencrypted protocol over an encrypted network stream. The command is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -f &amp;lt;remote address&amp;gt; -L &amp;lt;local port&amp;gt;:&amp;lt;remote address&amp;gt;:&amp;lt;remote port&amp;gt; -N
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Journal Control to investigate service logs</title>
+      <link>http://localhost:1313/en/posts/journal-control-to-investigate-service-logs/</link>
+      <pubDate>Wed, 26 Jul 2023 18:50:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/journal-control-to-investigate-service-logs/</guid>
+      <description>&lt;p&gt;When you face with a problem in one of the service and would like to investigate about its execution through logs, you can use the &lt;strong&gt;Journal Control&lt;/strong&gt; to this task as mentioned in the below command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u &amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Service is an example but the option -u can be used to any unit file, either system or user-defined one.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Create a Systemd Timer Unit</title>
+      <link>http://localhost:1313/en/posts/create-systemd-timer-unit/</link>
+      <pubDate>Wed, 26 Jul 2023 18:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/create-systemd-timer-unit/</guid>
+      <description>&lt;p&gt;In order to schedule an execution for a specific service given a period of time, a timer file can helps achieve this goal. Timers are systemd unit files, in which its name is followed by the suffix &lt;strong&gt;.timer&lt;/strong&gt;, and it has that characteristic. Look into to its file content as demonstrated in the following example, we can notice the presence of section &lt;strong&gt;Timer&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Description&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Timer&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OnCalendar&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;*-*-* 10:30:00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Persistent&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Install&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WantedBy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;target&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;strong&gt;Timer&lt;/strong&gt; section uses the option &lt;strong&gt;OnCalendar&lt;/strong&gt; to establish when the service should be executed (in the above example, always at 10:30) pointing out to its service in the option &lt;strong&gt;Unit&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Check and change the default target boot for Linux</title>
+      <link>http://localhost:1313/en/posts/check-and-change-default-target-boot/</link>
+      <pubDate>Wed, 26 Jul 2023 11:41:14 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/check-and-change-default-target-boot/</guid>
+      <description>&lt;p&gt;Systemd is responsible to manage Linux system resources. Those resources are known as units, such as services, targets, sockets and so on. It is possible to use systemd to list all of units are made of by the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Targets represent the state of Linux has reached during startup. It is also possible to run the above command to filter only for target units:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units --type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To get the default target boot has been used for Linux, the following command fit the purpose:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux User Management Commands</title>
+      <link>http://localhost:1313/en/posts/linux-users-management-commands/</link>
+      <pubDate>Mon, 24 Jul 2023 18:46:38 +0000</pubDate>
+      <guid>http://localhost:1313/en/posts/linux-users-management-commands/</guid>
+      <description>&lt;p&gt;In the below table there are some commands can be used to handle users and groups:&lt;/p&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Goal&lt;/th&gt;
+					&lt;th&gt;Command&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;add user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;adduser &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;add user group&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;addgroup &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;add specific user group as primary group&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -g &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;append user group as suplementary group&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -aG &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;lock user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -L &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;check the user groups&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;id &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;change to root user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo -i&lt;/code&gt; or &lt;code&gt;sudo su -&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;change to another user&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo su - &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;set password&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;passwd &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;To give permissions for specific user/group in order to execute commands with &lt;em&gt;sudo&lt;/em&gt;, it can be pointed out in a separeted &lt;em&gt;sudoer&lt;/em&gt; file (within &lt;em&gt;sudoers.d&lt;/em&gt; directory). There is a below example to apply settings for &lt;em&gt;myuser&lt;/em&gt; enabling it to execute &lt;em&gt;restart&lt;/em&gt; and &lt;em&gt;reload&lt;/em&gt; commands from http service:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

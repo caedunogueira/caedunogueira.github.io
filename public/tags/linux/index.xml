@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Carlos Nogueira</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 02 Aug 2023 07:30:13 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conexões com TCP Wrappers e Sockets do Systemd</title>
+      <link>http://localhost:1313/posts/conexoes-com-tcp-wrappers-e-sockets-do-systemd/</link>
+      <pubDate>Wed, 02 Aug 2023 07:30:13 +0000</pubDate>
+      <guid>http://localhost:1313/posts/conexoes-com-tcp-wrappers-e-sockets-do-systemd/</guid>
+      <description>&lt;p&gt;Você pode criar uma camada extra para conexões usando Sockets do Systemd com TCP Wrappers. Em primeiro lugar, precisamos verificar se o &lt;code&gt;sshd.socket&lt;/code&gt; está parado:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl status sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Caso contrário, podemos usar o comando abaixo para atingir esse objetivo.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl stop sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A próxima etapa pode ser criar um &lt;em&gt;job&lt;/em&gt; para interromper &lt;code&gt;sshd.service&lt;/code&gt; e iniciar &lt;code&gt;sshd.socket&lt;/code&gt;. Os seguintes comandos auxiliam nesta tarefa:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo at now + &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; minutes
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl stop sshd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;at &amp;gt; systemctl start sshd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O comando &lt;code&gt;Ctrl + D&lt;/code&gt; permitirá finalizar a edição e agendar o &lt;em&gt;job&lt;/em&gt; para o horário proposto. Depois que o socket do Systemd foi iniciado, você pode verificar a presença da biblioteca TCP Wrapper:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tunel SSH para Tráfego de Rede</title>
+      <link>http://localhost:1313/posts/tunel-ssh-para-trafego-de-rede/</link>
+      <pubDate>Wed, 02 Aug 2023 07:15:26 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tunel-ssh-para-trafego-de-rede/</guid>
+      <description>&lt;p&gt;O túnel SSH é o encaminhamento de porta via SSH no qual você poderá passar o tráfego que pode usar um protocolo não criptografado em um fluxo de rede criptografado. O comando é:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -f &amp;lt;remote address&amp;gt; -L &amp;lt;local port&amp;gt;:&amp;lt;remote address&amp;gt;:&amp;lt;remote port&amp;gt; -N
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Journal Control para investigar logs de serviço</title>
+      <link>http://localhost:1313/posts/journal-control-para-investigar-logs-de-servico/</link>
+      <pubDate>Wed, 26 Jul 2023 18:50:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/journal-control-para-investigar-logs-de-servico/</guid>
+      <description>&lt;p&gt;Quando você se depara com um problema em um dos serviços e deseja investigar sobre sua execução através de logs, pode utilizar o &lt;strong&gt;Journal Control&lt;/strong&gt; para esta tarefa conforme mencionado no comando abaixo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;journalctl -u &amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O serviço é um exemplo, mas a opção -u pode ser usada para qualquer arquivo &lt;em&gt;unit&lt;/em&gt;, seja do sistema ou definido pelo usuário.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Criar Unit de Timer do Systemd</title>
+      <link>http://localhost:1313/posts/criar-unit-de-timer-do-systemd/</link>
+      <pubDate>Wed, 26 Jul 2023 18:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/criar-unit-de-timer-do-systemd/</guid>
+      <description>&lt;p&gt;Com propósito de agendar uma execução para um serviço específico em um determinado período de tempo, um arquivo &lt;em&gt;timer&lt;/em&gt; pode ajudar a atingir esse objetivo. &lt;em&gt;Timers&lt;/em&gt; são arquivos &lt;em&gt;unit&lt;/em&gt; do systemd, cujo nome é seguido pelo sufixo &lt;strong&gt;.timer&lt;/strong&gt;, e tem essa característica. Olhando para o conteúdo do arquivo conforme demonstrado no exemplo a seguir, podemos notar a presença da seção &lt;strong&gt;Timer&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Description&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;XXXX
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Timer&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;OnCalendar&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;*-*-* 10:30:00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Persistent&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;true
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Unit&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;service file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;Install&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;WantedBy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;target&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A seção &lt;strong&gt;Timer&lt;/strong&gt; utiliza a opção &lt;strong&gt;OnCalendar&lt;/strong&gt; para estabelecer quando o serviço deve ser executado (no exemplo acima, sempre às 10h30) apontando seu respectivo serviço na opção &lt;strong&gt;Unit&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Verificar e alterar inicialização de destino padrão para Linux</title>
+      <link>http://localhost:1313/posts/verificar-e-alterar-inicializacao-de-destino-padrao/</link>
+      <pubDate>Wed, 26 Jul 2023 11:41:14 +0000</pubDate>
+      <guid>http://localhost:1313/posts/verificar-e-alterar-inicializacao-de-destino-padrao/</guid>
+      <description>&lt;p&gt;O Systemd é responsável por gerenciar recursos de sistema do Linux. Esses recursos são conhecidos como &lt;em&gt;units&lt;/em&gt;, como serviços, &lt;em&gt;targets&lt;/em&gt;, &lt;em&gt;sockets&lt;/em&gt; e assim por diante. É possível usar o &lt;strong&gt;systemd&lt;/strong&gt; para listar todas as &lt;em&gt;units&lt;/em&gt; com o seguinte comando:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Targets&lt;/em&gt; representam o estado que o Linux alcançou durante a inicialização. Também é possível executar o comando acima para filtrar apenas as &lt;em&gt;units&lt;/em&gt; do tipo &lt;em&gt;target&lt;/em&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;systemctl list-units --type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;target
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para obter o &lt;em&gt;target&lt;/em&gt; padrão sendo utilizado para o Linux, o seguinte comando se encaixa nesse propósito:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Comandos de Gestão de Usuário no Linux</title>
+      <link>http://localhost:1313/posts/comandos-gestao-usuario-linux/</link>
+      <pubDate>Mon, 24 Jul 2023 18:46:38 +0000</pubDate>
+      <guid>http://localhost:1313/posts/comandos-gestao-usuario-linux/</guid>
+      <description>&lt;p&gt;Na tabela abaixo existem alguns comandos que podem ser utilizados para lidar com usuários e grupos:&lt;/p&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Objetivo&lt;/th&gt;
+					&lt;th&gt;Comando&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;adicionar usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;adduser &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;adicionar grupo de usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;addgroup &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;adicionar grupo de usuário como grupo primário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -g &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;anexar grupo de usuário como grupo suplementar&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -aG &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;travar usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;usermod -L &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;checar os grupos do usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;id &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;mudar para usuário root&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo -i&lt;/code&gt; or &lt;code&gt;sudo su -&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;mudar para outro usuário&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;sudo su - &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;configurar senha&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;passwd &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Para conceder permissões para um usuário/grupo específico para executar comandos com o &lt;em&gt;sudo&lt;/em&gt;, isso pode ser apontado em um arquivo &lt;em&gt;sudoer&lt;/em&gt; separado (dentro do diretório &lt;em&gt;sudoers.d&lt;/em&gt;). Há um exemplo abaixo para aplicar configurações para &lt;em&gt;myuser&lt;/em&gt; permitindo ele executar os comandos &lt;em&gt;restart&lt;/em&gt; e &lt;em&gt;reload&lt;/em&gt; do serviço http:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

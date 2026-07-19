@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kubernetes on Carlos Nogueira</title>
+    <link>http://localhost:1313/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Sun, 11 Feb 2024 10:30:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes - Parte 1</title>
+      <link>http://localhost:1313/posts/kubernetes-parte-1/</link>
+      <pubDate>Sun, 11 Feb 2024 10:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/kubernetes-parte-1/</guid>
+      <description>&lt;p&gt;O Kubernetes é um orquestrador de contêineres criado para ser executado usando uma arquitetura de contêineres, ou seja, um cluster que contém um nó mestre (o nó &lt;em&gt;control plane&lt;/em&gt;) e nós escravos (os nós de trabalho). Um nó &lt;em&gt;control plane&lt;/em&gt; é responsável apenas por gerenciar os nós de trabalho e garantir sua integridade para executar suas cargas de trabalho. O nó &lt;em&gt;control plane&lt;/em&gt; não terá nenhuma carga de trabalho em execução para se tornar um nó mais robusto e eficiente, o que aumenta as chances de evitar que um problema ocorra nele devido a um problema de carga de trabalho.
+O nó &lt;em&gt;control plane&lt;/em&gt; exporá sua API, o que permite gerenciar e interagir com o cluster.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

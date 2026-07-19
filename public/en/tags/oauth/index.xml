@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Oauth on Carlos Nogueira</title>
+    <link>http://localhost:1313/en/tags/oauth/</link>
+    <description>Recent content in Oauth on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Apr 2023 07:02:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Refresh Token</title>
+      <link>http://localhost:1313/en/posts/oauth-refresh-token/</link>
+      <pubDate>Thu, 27 Apr 2023 07:02:00 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-refresh-token/</guid>
+      <description>&lt;p&gt;Refresh token is a reference token so, you can revogate it if someone stole from you. As a reference token the protocol define it to a long-lived. If you remove it from Authorization Server storage the attacker won’t be able to get a new access token again. The Authorization Server can provide a list of apps approved by the user (and that can be revogate).&lt;/p&gt;
+&lt;p&gt;The usually use case is the duration session (renew the access token getting a new one without provide the credentials again).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OAuth Responses</title>
+      <link>http://localhost:1313/en/posts/oauth-responses/</link>
+      <pubDate>Wed, 26 Apr 2023 07:24:26 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-responses/</guid>
+      <description>&lt;p&gt;When there is a problem with authorization, there are 2 HTTP response status code used to let the client know a little bit more about the problem:&lt;/p&gt;
+&lt;h2 id=&#34;401---unauthorized&#34;&gt;401 - Unauthorized&lt;/h2&gt;
+&lt;p&gt;The Resource Server can answers for one of the 2 scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We don&amp;rsquo;t know who you are&lt;/li&gt;
+&lt;li&gt;We won&amp;rsquo;t accept anymore your token because it is expired&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;403---forbidden&#34;&gt;403 - Forbidden&lt;/h2&gt;
+&lt;p&gt;The Resource Server answers for the scenario:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We know perfectly you are but you are not allowed to get access for this resource&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>OAuth 2.1 Flows</title>
+      <link>http://localhost:1313/en/posts/oauth-2-1-flows/</link>
+      <pubDate>Wed, 26 Apr 2023 06:47:00 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-2-1-flows/</guid>
+      <description>&lt;p&gt;For the OAuth 2.1, the amount of recommended flows decreased (from 5 to 2), in which they are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Client Credentials&lt;/li&gt;
+&lt;li&gt;Authorization Code with PKCE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;client-credentials&#34;&gt;Client Credentials&lt;/h2&gt;
+&lt;p&gt;That flow represents the machine to machine communication, in which you don&amp;rsquo;t have &amp;ldquo;interactive&amp;rdquo; user present or, at least, you don&amp;rsquo;t care about it. It means that the user information is not necessary to get resources access, only the client information.&lt;/p&gt;
+&lt;p&gt;The client sends a POST request to the &lt;em&gt;token&lt;/em&gt; endpoint in Authorization Server. For successful request, the cliente receives an access token in the response so that, it is able to consume the resources available in Resource Server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Motivations to OAuth</title>
+      <link>http://localhost:1313/en/posts/oauth-motivations/</link>
+      <pubDate>Sun, 23 Apr 2023 13:35:47 -0300</pubDate>
+      <guid>http://localhost:1313/en/posts/oauth-motivations/</guid>
+      <description>&lt;p&gt;In the year of 2005 came up the first protocol using web technologies to provide authentication and authorization with identity provider: SAML 2.0.&lt;/p&gt;
+&lt;p&gt;Before that, it was feasible to do that in web applications with NTLM or Kerberos technologies putting those inside the browser to get access to resources using Active Directory, for example, as a way to have single sign-on on those applications.&lt;/p&gt;
+&lt;p&gt;However, the idea with SAML 2.0 was in how could we proof the user is the user by doing requests to the browser? For those technologies in that age we are talking about use of SOAP (XML) and its signature standards (XML signature).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

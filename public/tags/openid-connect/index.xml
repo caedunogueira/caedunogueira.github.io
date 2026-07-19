@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Openid-Connect on Carlos Nogueira</title>
+    <link>http://localhost:1313/tags/openid-connect/</link>
+    <description>Recent content in Openid-Connect on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Thu, 27 Apr 2023 07:23:50 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/openid-connect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenID Connect</title>
+      <link>http://localhost:1313/posts/openid-connect/</link>
+      <pubDate>Thu, 27 Apr 2023 07:23:50 -0300</pubDate>
+      <guid>http://localhost:1313/posts/openid-connect/</guid>
+      <description>&lt;p&gt;O OpenID Connect é uma camada extra sobre o OAuth, então podemos dizer que ele tem os mesmos fluxos que o OAuth tem com mais alguns escopos para estendê-lo.&lt;/p&gt;
+&lt;p&gt;Então, quando falamos do token de acesso, o protocolo diz que ele não deve ser usado pelo cliente para ler e obter acesso às suas informações. Os clientes só precisam encaminhá-lo. Por outro lado, os clientes podem precisar obter informações do usuário, portanto, o OpenID Connect fornece o token de identidade no qual apenas os clientes o usarão.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
