@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Carlos Nogueira</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 11 Feb 2024 10:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 13:51:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ddd</title>
+      <link>http://localhost:1313/tags/ddd/</link>
+      <pubDate>Wed, 02 Sep 2026 13:51:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/ddd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Domain-Driven-Design</title>
+      <link>http://localhost:1313/tags/domain-driven-design/</link>
+      <pubDate>Wed, 02 Sep 2026 13:51:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/domain-driven-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Learning-Machine</title>
+      <link>http://localhost:1313/tags/learning-machine/</link>
+      <pubDate>Tue, 01 Sep 2026 20:07:00 -0300</pubDate>
+      <guid>http://localhost:1313/tags/learning-machine/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Kubernetes</title>
       <link>http://localhost:1313/tags/kubernetes/</link>

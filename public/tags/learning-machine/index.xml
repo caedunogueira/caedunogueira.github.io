@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Learning-Machine on Carlos Nogueira</title>
+    <link>http://localhost:1313/tags/learning-machine/</link>
+    <description>Recent content in Learning-Machine on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Tue, 01 Sep 2026 20:07:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/learning-machine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draft - Máquina de Aprender - Anotações</title>
+      <link>http://localhost:1313/posts/draft-maquina-de-aprender/</link>
+      <pubDate>Tue, 01 Sep 2026 20:07:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/draft-maquina-de-aprender/</guid>
+      <description>&lt;p&gt;No módulo Máquina de Aprender, o primeiro ponto de análise foca no objetivo de aprendizado. O autor reforça que se ater para somente um objetivo genérico pode, em algum momento, até te levar para o destino esperado mas, você consumirá muito mais tempo e energia nessa abordagem.
+O objetivo de aprendizado deve conter mais informações, ser mais específico, como as ações esperadas a serem alcançadas com aquele aprendizado, o nível de profundidade esperado para aquele conhecimento, com uso de quais ferramentas, sob qual contexto e qual feedback esperado.
+Com essas informações, você tem um mapa mais acurado de onde você está e se está indo na direção desejada. Não significa que precisa ter um objetivo perfeito. O autor incentiva começar genérico e avançar, refinando, adicionado informações que traga mais clareza.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

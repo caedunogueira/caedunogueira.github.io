@@ -6,8 +6,25 @@
     <description>Recent content on Carlos Nogueira</description>
     <generator>Hugo</generator>
     <language>pt-br</language>
-    <lastBuildDate>Sun, 11 Feb 2024 10:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 13:51:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draft - Domain-Driven Design</title>
+      <link>http://localhost:1313/posts/draft-domain-driven-design/</link>
+      <pubDate>Wed, 02 Sep 2026 13:51:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/draft-domain-driven-design/</guid>
+      <description>&lt;p&gt;Segundo o autor, quanto mais raso o seu conhecimento no domínio, maiores as chances de modelagem fracassarem. O autor incentiva o profissional a mergulhar no domínio em que irá trabalhar o máximo que puder, inclusive com adoção da prática de estudar materiais sobre o tema antes de conversar com os especialistas, utilizando esses últimos para validar o conhecimento adquirido.&lt;/p&gt;
+&lt;p&gt;Pela Taxonomia de Bloom, o nível mínimo de profundidade no conhecimento do domínio deveria ser de Compreender (explicar). É dito que nesse processo, o aprofundamento corresponde para uma investigação:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Draft - Máquina de Aprender - Anotações</title>
+      <link>http://localhost:1313/posts/draft-maquina-de-aprender/</link>
+      <pubDate>Tue, 01 Sep 2026 20:07:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/draft-maquina-de-aprender/</guid>
+      <description>&lt;p&gt;No módulo Máquina de Aprender, o primeiro ponto de análise foca no objetivo de aprendizado. O autor reforça que se ater para somente um objetivo genérico pode, em algum momento, até te levar para o destino esperado mas, você consumirá muito mais tempo e energia nessa abordagem.
+O objetivo de aprendizado deve conter mais informações, ser mais específico, como as ações esperadas a serem alcançadas com aquele aprendizado, o nível de profundidade esperado para aquele conhecimento, com uso de quais ferramentas, sob qual contexto e qual feedback esperado.
+Com essas informações, você tem um mapa mais acurado de onde você está e se está indo na direção desejada. Não significa que precisa ter um objetivo perfeito. O autor incentiva começar genérico e avançar, refinando, adicionado informações que traga mais clareza.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Kubernetes - Parte 1</title>
       <link>http://localhost:1313/posts/kubernetes-parte-1/</link>

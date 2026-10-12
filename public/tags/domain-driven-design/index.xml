@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Domain-Driven-Design on Carlos Nogueira</title>
+    <link>http://localhost:1313/tags/domain-driven-design/</link>
+    <description>Recent content in Domain-Driven-Design on Carlos Nogueira</description>
+    <generator>Hugo</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 02 Sep 2026 13:51:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Draft - Domain-Driven Design</title>
+      <link>http://localhost:1313/posts/draft-domain-driven-design/</link>
+      <pubDate>Wed, 02 Sep 2026 13:51:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/draft-domain-driven-design/</guid>
+      <description>&lt;p&gt;Segundo o autor, quanto mais raso o seu conhecimento no domínio, maiores as chances de modelagem fracassarem. O autor incentiva o profissional a mergulhar no domínio em que irá trabalhar o máximo que puder, inclusive com adoção da prática de estudar materiais sobre o tema antes de conversar com os especialistas, utilizando esses últimos para validar o conhecimento adquirido.&lt;/p&gt;
+&lt;p&gt;Pela Taxonomia de Bloom, o nível mínimo de profundidade no conhecimento do domínio deveria ser de Compreender (explicar). É dito que nesse processo, o aprofundamento corresponde para uma investigação:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
